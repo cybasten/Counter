@@ -8,16 +8,21 @@ int main()
     for (int i = 0; i < 27; i++)
         Time[i] = 0;
     char next;
+   	cout << "Type something here :" << endl;
     do
     {
         cin.get(next);
+        if(!next == 20 && (next < 65 || next > 122 || (next > 90 && next < 97)))
+        	continue;
+        if(next > 96)
+        	next = next - 32;
         switch(next)
         {
             case ' ':
                 Time[0]++;
                 break;
             default:
-                Time[next - 96]++;
+                Time[next - 64]++;
                 break;
                  
         }
